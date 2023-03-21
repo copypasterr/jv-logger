@@ -11,7 +11,7 @@ public class OrderServiceImpl implements OrderService {
     private static final Logger logger = LogManager.getLogger(OrderServiceImpl.class);
     @Override
     public Order completeOrder(Long userId) {
-        logger.info("Login method was called. Params: userId = {}", userId);
+        logger.debug("Login method was called. Params: userId = {}", userId);
         List<Product> products = getAllProductsFromShoppingCart(userId);
         Order order = new Order(products, userId);
         order.setOrderId(1L);
